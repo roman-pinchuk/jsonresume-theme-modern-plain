@@ -38,11 +38,6 @@ jobs:
           mkdir -p _site
           resume export _site/index.html --theme . --resume resume.sample.json
 
-      - name: Check for CNAME and preserve it
-        run: |
-          # Try to fetch existing CNAME from the deployed site
-          curl -f https://roman-pinchuk.github.io/jsonresume-theme-modern-plain/CNAME -o _site/CNAME 2>/dev/null || true
-
       - name: Setup Pages
         uses: actions/configure-pages@v4
 
