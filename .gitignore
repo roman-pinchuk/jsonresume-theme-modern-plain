@@ -6,6 +6,7 @@ resume.pdf
 resume.html
 *.pdf
 *.html
+_site/
 
 # OS files
 .DS_Store
