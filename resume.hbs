@@ -1,0 +1,204 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>{{basics.name}} — {{basics.label}}</title>
+    <link href="https://fonts.googleapis.com" rel="preconnect">
+    <link href="https://fonts.gstatic.com" rel="preconnect" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=PT+Sans:ital,wght@0,400;0,700;1,400&display=swap" rel="stylesheet">
+    <style>{{{css}}}</style>
+</head>
+<body>
+<div class="resume-container" aria-label="Resume of {{basics.name}}" role="main">
+    <header class="resume-header">
+        <div class="header-left">
+            <h1>{{uppercase basics.name}}</h1>
+            <p class="job-title">{{basics.label}}</p>
+            {{#if basics.availability}}
+            <p class="availability">{{basics.availability}}</p>
+            {{/if}}
+        </div>
+        <div class="header-right">
+            {{#if basics.location}}
+            <span>{{basics.location.city}}{{#if basics.location.countryCode}}, {{basics.location.countryCode}}{{/if}}</span><br>
+            {{/if}}
+            {{#if basics.phone}}
+            <strong><a href="tel:{{basics.phone}}" style="color: inherit; text-decoration: none;">{{basics.phone}}</a></strong>
+            {{/if}}
+            {{#if basics.email}}
+            <br><strong><a href="mailto:{{basics.email}}" style="color: inherit; text-decoration: none;">{{basics.email}}</a></strong><br>
+            {{/if}}
+            <div class="social-links">
+                {{#if basics.website}}
+                <a aria-label="Personal Website" href="{{basics.website}}" rel="noopener noreferrer nofollow" target="_blank">
+                    <svg fill="currentColor" height="1em" style="vertical-align: -.125em" viewBox="0 0 24 24" width="1em">
+                        <path d="M12 2C6.48 2 2 6.48 2 12s4.48 10 10 10 10-4.48 10-10S17.52 2 12 2zm-1 17.93c-3.95-.49-7-3.85-7-7.93 0-.62.08-1.21.21-1.79L9 15v1c0 1.1.9 2 2 2v1.93zm6.9-2.54c-.26-.81-1-1.39-1.9-1.39h-1v-3c0-.55-.45-1-1-1H8v-2h2c.55 0 1-.45 1-1V7h2c1.1 0 2-.9 2-2v-.41c2.93 1.19 5 4.06 5 7.41 0 2.08-.8 3.97-2.1 5.39z"/>
+                    </svg>
+                    {{extractDomain basics.website}}
+                </a>
+                {{/if}}
+                {{#if basics.profiles}}
+                {{#each basics.profiles}}
+                <span class="separator">|</span>
+                <a aria-label="{{network}} Profile" href="{{url}}" rel="noopener noreferrer nofollow" target="_blank">
+                    {{#eq network "LinkedIn"}}
+                    <svg fill="currentColor" height="1em" style="vertical-align: -.125em" viewBox="0 0 24 24" width="1em">
+                        <path d="M19 0h-14c-2.761 0-5 2.239-5 5v14c0 2.761 2.239 5 5 5h14c2.762 0 5-2.239 5-5v-14c0-2.761-2.238-5-5-5zm-11 19h-3v-11h3v11zm-1.5-12.268c-.966 0-1.75-.79-1.75-1.764s.784-1.764 1.75-1.764 1.75.79 1.75 1.764-.783 1.764-1.75 1.764zm13.5 12.268h-3v-5.604c0-3.368-4-3.113-4 0v5.604h-3v-11h3v1.765c1.396-2.586 7-2.777 7 2.476v6.759z"/>
+                    </svg>
+                    {{username}}
+                    {{else}}{{#eq network "GitHub"}}
+                    <svg fill="currentColor" height="1em" style="vertical-align: -.125em" viewBox="0 0 16 16" width="1em">
+                        <path d="M8 0C3.58 0 0 3.58 0 8c0 3.54 2.29 6.53 5.47 7.59.4.07.55-.17.55-.38 0-.19-.01-.82-.01-1.49-2.01.37-2.53-.49-2.69-.94-.09-.23-.48-.94-.82-1.13-.28-.15-.68-.52-.01-.53.63-.01 1.08.58 1.23.82.72 1.21 1.87.87 2.33.66.07-.52.28-.87.51-1.07-1.78-.2-3.64-.89-3.64-3.95 0-.87.31-1.59.82-2.15-.08-.2-.36-1.02.08-2.12 0 0 .67-.21 2.2.82.64-.18 1.32-.27 2-.27.68 0 1.36.09 2 .27 1.53-1.04 2.2-.82 2.2-.82.44 1.1.16 1.92.08 2.12.51.56.82 1.27.82 2.15 0 3.07-1.87 3.75-3.65 3.95.29.25.54.73.54 1.48 0 1.07-.01 1.93-.01 2.2 0 .21.15.46.55.38A8.013 8.013 0 0016 8c0-4.42-3.58-8-8-8z"/>
+                    </svg>
+                    {{username}}
+                    {{else}}{{#eq network "WhatsApp"}}
+                    <svg fill="currentColor" height="1em" style="vertical-align: -.125em" viewBox="0 0 24 24" width="1em">
+                        <path d="M12.04 2C6.58 2 2.13 6.45 2.13 11.91c0 1.79.52 3.48 1.47 4.94L2 22l5.25-1.38c1.41.88 3.02 1.4 4.79 1.4h.01c5.46 0 9.91-4.45 9.91-9.91 0-5.46-4.45-9.91-9.91-9.91zM18 15.92c-.16-.08-.94-.46-1.09-.52-.15-.05-.26-.08-.37.08-.11.16-.13.16-.41.52-.51.62-.09.11-.18.12-.34.04-.16-.08-.66-.24-1.26-.77-.47-.42-.78-.94-.87-1.1-.09-.16 0-.25.07-.32.07-.07.15-.18.23-.27.08-.09.11-.16.16-.27.05-.11.03-.2-.01-.27-.05-.08-.37-1.07-.51-1.46-.13-.38-.27-.33-.37-.33h-.2c-.1 0-.26.03-.39.16-.13.13-.51.5-.51 1.22s.52 1.41.59 1.51c.07.1.94 1.59 2.4 2.2.35.15.63.24.84.31.39.12.67.1.91.06.28-.04.94-.38 1.07-.74.13-.36.13-.66.09-.74-.04-.07-.15-.12-.31-.2z"/>
+                    </svg>
+                    {{username}}
+                    {{else}}
+                    {{username}}
+                    {{/eq}}{{/eq}}{{/eq}}
+                </a>
+                {{/each}}
+                {{/if}}
+            </div>
+        </div>
+    </header>
+
+    {{#if basics.summary}}
+    <section class="summary">
+        <h1>SUMMARY</h1>
+        <p>{{{basics.summary}}}</p>
+    </section>
+    {{/if}}
+
+    <div class="main-content">
+        <section class="left-column">
+            {{#if work}}
+            <h1>EXPERIENCE</h1>
+            {{#each work}}
+            <article class="experience-entry">
+                <div class="date-cell">
+                    <span>{{formatDate endDate}}</span>
+                    <span class="arrow">↑</span>
+                    <span>{{formatDate startDate}}</span>
+                </div>
+                <div class="experience-details">
+                    <h2>{{position}}</h2>
+                    <h3>
+                        {{name}}
+                        {{#if url}}
+                        <a href="{{url}}" target="_blank" rel="noopener noreferrer nofollow" class="company-url">
+                            <svg fill="currentColor" height="0.85em" style="vertical-align: -.05em; margin-left: 0.3em; margin-right: 0.2em;" viewBox="0 0 24 24" width="0.85em">
+                                <path d="M3.9 12c0-1.71 1.39-3.1 3.1-3.1h4V7H7c-2.76 0-5 2.24-5 5s2.24 5 5 5h4v-1.9H7c-1.71 0-3.1-1.39-3.1-3.1zM8 13h8v-2H8v2zm9-6h-4v1.9h4c1.71 0 3.1 1.39 3.1 3.1s-1.39 3.1-3.1 3.1h-4V17h4c2.76 0 5-2.24 5-5s-2.24-5-5-5z"/>
+                            </svg>
+                            {{extractDomain url}}
+                        </a>
+                        {{/if}}
+                        {{#if location}}
+                        <span class="separator">|</span>
+                        <span class="location-country">{{location}}</span>
+                        {{/if}}
+                    </h3>
+                    {{#if summary}}
+                    <p>{{summary}}</p>
+                    {{/if}}
+                    {{#if highlights}}
+                    <ul>
+                        {{#each highlights}}
+                        <li>{{{this}}}</li>
+                        {{/each}}
+                    </ul>
+                    {{/if}}
+                </div>
+            </article>
+            {{/each}}
+            {{/if}}
+        </section>
+
+        <aside class="right-column">
+            {{#if projects}}
+            <section class="projects">
+                <h1>SELECTED PROJECTS</h1>
+                <ul class="projects-list" style="list-style: disc; padding-left: 1.5em">
+                    {{#each projects}}
+                    <li>
+                        <b>
+                        {{#if url}}
+                        <a href="{{url}}" target="_blank" rel="noopener noreferrer nofollow">{{name}}</a>:
+                        {{else}}
+                        {{name}}:
+                        {{/if}}
+                        </b> {{description}}
+                    </li>
+                    {{/each}}
+                </ul>
+            </section>
+            {{/if}}
+
+            {{#if education}}
+            <section class="education">
+                <h1>EDUCATION</h1>
+                {{#each education}}
+                <div class="education-entry">
+                    <p>
+                        <strong>
+                        {{#if url}}
+                        <a href="{{url}}" target="_blank" rel="noopener noreferrer nofollow">{{studyType}}{{#if area}} {{area}}{{/if}}</a>
+                        {{else}}
+                        {{studyType}}{{#if area}} {{area}}{{/if}}
+                        {{/if}}
+                        </strong>
+                        <span>- {{institution}}{{#if endDate}} ({{formatYear endDate}}){{/if}}{{#if gpa}} - GPA: {{gpa}}{{/if}}</span>
+                    </p>
+                </div>
+                {{/each}}
+                {{#if certificates}}
+                {{#each certificates}}
+                <div class="education-entry">
+                    <p>
+                        {{#if url}}
+                        <a href="{{url}}" target="_blank" rel="noopener noreferrer nofollow"><strong class="certification">{{name}}</strong></a>
+                        {{else}}
+                        <strong class="certification">{{name}}</strong>
+                        {{/if}}
+                        <span>({{issuer}}{{#if date}}, {{formatYear date}}{{/if}})</span>
+                    </p>
+                </div>
+                {{/each}}
+                {{/if}}
+            </section>
+            {{/if}}
+
+            {{#if skills}}
+            <section class="skills">
+                <h1>SKILLS</h1>
+                <div class="skills-entry">
+                    {{#each skills}}
+                    <p><strong>{{name}}</strong>
+                    <span>{{join keywords ", "}}</span></p>
+                    {{/each}}
+                </div>
+            </section>
+            {{/if}}
+
+            {{#if languages}}
+            <section class="languages">
+                <h1>LANGUAGES</h1>
+                <table class="languages-table">
+                    {{#each languages}}
+                    <tr>
+                        <td>{{language}}</td>
+                        <td>{{fluency}}</td>
+                    </tr>
+                    {{/each}}
+                </table>
+            </section>
+            {{/if}}
+        </aside>
+    </div>
+</div>
+</body>
+</html>

@@ -1,0 +1,25 @@
+{
+  "name": "jsonresume-theme-modern-plain",
+  "version": "1.0.0",
+  "description": "A clean, modern JSON Resume theme with a professional layout",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "keywords": [
+    "jsonresume",
+    "jsonresume-theme",
+    "cv",
+    "resume",
+    "modern",
+    "plain"
+  ],
+  "author": "Roman Pinchuk",
+  "license": "MIT",
+  "dependencies": {
+    "handlebars": "^4.7.8"
+  },
+  "devDependencies": {
+    "resume-cli": "^3.0.8"
+  }
+}
