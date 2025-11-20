@@ -1,7 +1,7 @@
 {
   "name": "jsonresume-theme-modern-plain",
   "version": "1.0.0",
-  "description": "A clean, modern JSON Resume theme with a professional layout",
+  "description": "A clean, modern JSON Resume theme with a professional two-column layout, PT Sans typography, and optimized for single-page print output",
   "main": "index.js",
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1"
@@ -12,14 +12,28 @@
     "cv",
     "resume",
     "modern",
-    "plain"
+    "plain",
+    "professional",
+    "two-column",
+    "print-optimized"
   ],
   "author": "Roman Pinchuk",
   "license": "MIT",
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/roman-pinchuk/jsonresume-theme-modern-plain.git"
+  },
+  "bugs": {
+    "url": "https://github.com/roman-pinchuk/jsonresume-theme-modern-plain/issues"
+  },
+  "homepage": "https://github.com/roman-pinchuk/jsonresume-theme-modern-plain#readme",
   "dependencies": {
     "handlebars": "^4.7.8"
   },
   "devDependencies": {
     "resume-cli": "^3.0.8"
+  },
+  "peerDependencies": {
+    "resume-cli": ">=3.0.0"
   }
 }
