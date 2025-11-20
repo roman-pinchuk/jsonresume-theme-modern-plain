@@ -1,5 +1,9 @@
 # JSON Resume Theme - Modern Plain
 
+[![npm version](https://img.shields.io/npm/v/jsonresume-theme-modern-plain.svg)](https://www.npmjs.com/package/jsonresume-theme-modern-plain)
+[![npm downloads](https://img.shields.io/npm/dm/jsonresume-theme-modern-plain.svg)](https://www.npmjs.com/package/jsonresume-theme-modern-plain)
+[![license](https://img.shields.io/npm/l/jsonresume-theme-modern-plain.svg)](https://github.com/roman-pinchuk/jsonresume-theme-modern-plain/blob/main/LICENSE)
+
 A clean, modern JSON Resume theme with a professional two-column layout. Perfect for developers, engineers, and technical professionals.
 
 ## Features
