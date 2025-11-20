@@ -655,15 +655,24 @@ strong.certification {
         padding-right: 0;
         margin-bottom: 0.3em;
         font-size: 0.9rem;
+        display: flex;
+        flex-direction: row-reverse;
+        justify-content: flex-end;
     }
 
     .date-cell span {
         display: inline;
-        margin-right: 0.3em;
+        margin-left: 0.3em;
     }
 
     .date-cell .arrow {
         margin: 0 0.2em;
+        font-size: 0;
+    }
+
+    .date-cell .arrow::after {
+        content: "→";
+        font-size: 0.9rem;
     }
 
     .header-left h1 {
