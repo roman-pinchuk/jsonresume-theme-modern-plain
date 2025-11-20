@@ -609,3 +609,115 @@ strong.certification {
     }
     .notes { page-break-before: avoid; }
 }
+
+@media screen and (max-width: 768px) {
+    body {
+        padding: 0;
+        background-color: #fff;
+    }
+
+    .resume-container {
+        width: 100%;
+        min-height: auto;
+        margin: 0;
+        padding: 1rem;
+        box-shadow: none;
+    }
+
+    .resume-header {
+        flex-direction: column;
+        align-items: flex-start;
+        gap: 0.8rem;
+    }
+
+    .header-right {
+        text-align: left;
+    }
+
+    .main-content {
+        flex-direction: column;
+        gap: 1.5rem;
+    }
+
+    .left-column,
+    .right-column {
+        width: 100%;
+    }
+
+    .experience-entry {
+        flex-direction: column;
+        margin-bottom: 1.2rem;
+    }
+
+    .date-cell {
+        flex: none;
+        text-align: left;
+        padding-right: 0;
+        margin-bottom: 0.3em;
+        font-size: 0.9rem;
+    }
+
+    .date-cell span {
+        display: inline;
+        margin-right: 0.3em;
+    }
+
+    .date-cell .arrow {
+        margin: 0 0.2em;
+    }
+
+    .header-left h1 {
+        font-size: 1.6rem;
+    }
+
+    .header-left .job-title {
+        font-size: 1rem;
+    }
+
+    h1 {
+        font-size: 1.1rem;
+    }
+
+    h2 {
+        font-size: 1rem;
+    }
+
+    h3 {
+        font-size: 0.95rem;
+    }
+
+    .social-links {
+        display: flex;
+        flex-wrap: wrap;
+        gap: 0.5rem;
+    }
+
+    .social-links .separator {
+        display: none;
+    }
+}
+
+@media screen and (max-width: 480px) {
+    .resume-container {
+        padding: 0.8rem;
+    }
+
+    .header-left h1 {
+        font-size: 1.4rem;
+    }
+
+    .header-left .job-title {
+        font-size: 0.95rem;
+    }
+
+    h1 {
+        font-size: 1rem;
+    }
+
+    .experience-details li,
+    .summary p,
+    .education-entry span,
+    .skills-entry span {
+        font-size: 0.9rem;
+    }
+}
