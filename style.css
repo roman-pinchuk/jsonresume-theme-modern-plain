@@ -1,5 +1,17 @@
 @import url('https://fonts.googleapis.com/css2?family=PT+Sans:ital,wght@0,400;0,700;1,400&display=swap');
 
+:root {
+    --primary-color: #4a89dc;
+    --primary-dark-color: #205bb5;
+    --text-color: #333;
+    --text-secondary-color: #555;
+    --border-color: #eee;
+    --background-color: #f0f0f0;
+    --white: #fff;
+    --section-spacing: 0.8rem;
+    --element-spacing: 0.4em;
+}
+
 *,
 ::after,
 ::before {
@@ -17,8 +29,8 @@ html {
 }
 
 body {
-    background-color: #f0f0f0;
-    color: #333;
+    background-color: var(--background-color);
+    color: var(--text-color);
     padding: 1rem 0
 }
 
@@ -26,7 +38,7 @@ body {
     width: 210mm;
     min-height: 297mm;
     margin: 1rem auto;
-    background-color: #fff;
+    background-color: var(--white);
     padding: 15mm 10mm;
     box-shadow: 0 0 10px rgba(0, 0, 0, .1);
     display: flex;
@@ -39,7 +51,7 @@ h3,
 h4,
 h5,
 h6 {
-    color: #205bb5;
+    color: var(--primary-dark-color);
     margin-bottom: .4em;
     margin-top: .8em;
     line-height: 1.1;
@@ -49,7 +61,7 @@ h6 {
 .header-left h1 {
     font-size: 2rem;
     font-weight: 600;
-    color: #4a89dc;
+    color: var(--primary-color);
     margin-bottom: .1em;
     line-height: 1;
     margin-top: 0;
@@ -60,9 +72,9 @@ h1 {
     font-size: 1.2rem;
     font-weight: 600;
     margin-bottom: .3em;
-    border-bottom: 1px solid #eee;
+    border-bottom: 1px solid var(--border-color);
     padding-bottom: .2em;
-    color: #205bb5;
+    color: var(--primary-dark-color);
     margin-top: .8em
 }
 
@@ -77,7 +89,7 @@ h1 {
 h2 {
     font-size: 1.1rem;
     font-weight: 500;
-    color: #4a89dc;
+    color: var(--primary-color);
     margin-top: 0;
     letter-spacing: .02em
 }
@@ -124,19 +136,22 @@ strong {
 }
 
 a {
-    color: #4a89dc;
+    color: var(--primary-color);
     text-decoration: none
 }
 
-a:hover {
-    text-decoration: underline
+a:hover,
+a:focus {
+    text-decoration: underline;
+    outline: 2px solid #4a89dc;
+    outline-offset: 2px;
 }
 
 .resume-header {
     display: flex;
     justify-content: space-between;
     align-items: flex-start;
-    border-bottom: 2px solid #4a89dc;
+    border-bottom: 2px solid var(--primary-color);
     padding-bottom: .8rem;
     margin-bottom: .8rem
 }
@@ -186,8 +201,11 @@ a:hover {
     transition: color .2s ease
 }
 
-.social-links a:hover {
+.social-links a:hover,
+.social-links a:focus {
     color: #4a89dc !important;
+    outline: 2px solid #4a89dc;
+    outline-offset: 2px;
 }
 
 .social-links svg {
@@ -253,12 +271,14 @@ a:hover {
 }
 
 .date-cell {
-    flex: 0 0 45pt;
+    flex: 0 0 auto;
+    min-width: 30pt;
+    max-width: 80pt;
     text-align: right;
-    padding-right: 0.8em;
-    font-size: .9rem;
+    padding-right: 0.4em;
+    font-size: 1rem;
     font-weight: 700;
-    color: #555;
+    color: var(--text-secondary-color);
     line-height: 1.1;
     letter-spacing: normal
 }
@@ -268,12 +288,13 @@ a:hover {
 }
 
 .date-cell .arrow {
-    color: #4a89dc
+    color: var(--primary-color)
 }
 
 .experience-details {
     flex-grow: 1;
-    min-width: 0
+    min-width: 0;
+    padding-left: 0.2em;
 }
 
 .right-column section {
@@ -293,7 +314,7 @@ a:hover {
 }
 
 .education-entry strong {
-    color: #333;
+    color: var(--text-color);
     font-weight: 700;
     font-size: 1.05rem;
     display: block;
@@ -333,7 +354,7 @@ strong.certification {
 
 .skills-entry strong {
     display: block;
-    color: #4a89dc;
+    color: var(--primary-color);
     font-weight: 700;
     font-size: 1.05rem;
     margin-bottom: 0.2em;
@@ -361,7 +382,7 @@ strong.certification {
 
 .languages-table td:first-child {
     font-weight: 700;
-    color: #4a89dc;
+    color: var(--primary-color);
     padding-right: 1em;
     font-size: 1.05rem;
     letter-spacing: .02em
@@ -413,7 +434,7 @@ strong.certification {
 .experience-details h2 {
     font-size: 1.1rem;
     font-weight: 500;
-    color: #4a89dc;
+    color: var(--primary-color);
     margin-top: 0;
     letter-spacing: .02em;
 }
@@ -437,9 +458,12 @@ strong.certification {
     align-items: center;
 }
 
-.company-url:hover {
+.company-url:hover,
+.company-url:focus {
     color: #4a89dc;
     text-decoration: none;
+    outline: 2px solid #4a89dc;
+    outline-offset: 2px;
 }
 
 .location {
@@ -473,20 +497,20 @@ strong.certification {
         margin: 8mm
     }
     html {
-        font-size: 9pt;
-        line-height: 1.15;
+        font-size: 10pt;
+        line-height: 1.2;
         -webkit-print-color-adjust: exact;
         print-color-adjust: exact
     }
     body {
         background-color: #fff !important;
-        padding: 0
+        padding: 5mm 0
     }
     .resume-container {
         width: 100%;
         min-height: auto;
         margin: 0;
-        padding: 0;
+        padding: 8mm 10mm;
         box-shadow: none;
         border: none
     }
@@ -513,20 +537,20 @@ strong.certification {
     }
     h1 {
         font-size: 1.15rem;
-        border-bottom-color: #eee;
-        color: #205bb5
+        border-bottom-color: var(--border-color);
+        color: var(--primary-dark-color)
     }
     .header-left h1 {
         font-size: 1.8rem;
-        color: #4a89dc
+        color: var(--primary-color)
     }
     h2 {
         font-size: 1.05rem;
-        color: #4a89dc
+        color: var(--primary-color)
     }
     h3 {
         font-size: .95rem;
-        color: #555;
+        color: var(--text-secondary-color);
         font-weight: 600;
         margin-bottom: 0.25em;
     }
@@ -569,11 +593,6 @@ strong.certification {
     }
     .right-column section {
         margin-bottom: 0.25rem;
-    }
-    .date-cell {
-        font-size: .85rem;
-        flex-basis: 55pt;
-        padding-right: 1em
     }
     .experience-details li {
         font-size: .85rem;
@@ -670,11 +689,10 @@ strong.certification {
 
     .date-cell span {
         display: inline;
-        margin-left: 0.3em;
     }
 
     .date-cell .arrow {
-        margin: 0 0.2em;
+        margin: 0 0.4em;
         font-size: 0;
     }
 
