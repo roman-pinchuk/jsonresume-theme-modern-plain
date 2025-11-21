@@ -157,6 +157,28 @@ To test changes to the theme:
 
 MIT
 
+## Release Process
+
+This project uses automated releases via GitHub Actions. To create a new release:
+
+1. Update the version in `package.json` using `npm version` command:
+   - For patch version: `npm version patch`
+   - For minor version: `npm version minor`
+   - For major version: `npm version major`
+
+2. Push the changes and the tag:
+   ```bash
+   git push origin master
+   git push origin v[version-number]
+   ```
+
+Alternatively, create a GitHub release through the web interface, which will trigger the npm publish workflow automatically.
+
+After setting up the automated release process:
+
+1. Create an npm access token at npmjs.com
+2. Add the token as a GitHub secret named `NPM_TOKEN` in your repository settings
+
 ## Credits
 
 Based on a professional CV template with modern design principles.
