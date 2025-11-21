@@ -5,6 +5,7 @@
 [![license](https://img.shields.io/npm/l/jsonresume-theme-modern-plain.svg)](https://github.com/roman-pinchuk/jsonresume-theme-modern-plain/blob/main/LICENSE)
 
 A clean, modern JSON Resume theme with a professional two-column layout. Perfect for developers, engineers, and technical professionals.
+<img width="1214" height="664" alt="image" src="https://github.com/user-attachments/assets/dbc10962-0914-4072-813f-5b285f3a2f61" />
 
 ## Features
 
