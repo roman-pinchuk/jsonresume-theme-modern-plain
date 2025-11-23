@@ -30,13 +30,19 @@ A clean, modern JSON Resume theme with a professional two-column layout. Perfect
 npm install
 ```
 
-### Using with resume-cli
+### Using with resume-cli or resumed
 
 Install globally:
 
 ```bash
+# Traditional tool
 npm install -g resume-cli
+
+# Modern alternative (Note: does not support local theme development with --theme .)
+npm install -g @rbardini/resumed
 ```
+
+**Note:** This theme works with both tools, but for local theme development (using `--theme .`), use `resume-cli`. The `resumed` package is a more modern alternative but handles local themes differently.
 
 ## Usage
 
