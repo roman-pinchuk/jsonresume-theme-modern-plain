@@ -2,11 +2,15 @@
 node_modules/
 
 # Generated files
-resume.pdf
-resume.html
 *.pdf
 *.html
-_site/
+*.docx
+*.odt
+output.html
+output.pdf
+sample.html
+sample.pdf
+temp-resume.html
 
 # OS files
 .DS_Store

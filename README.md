@@ -46,6 +46,28 @@ npm install -g @rbardini/resumed
 
 ## Usage
 
+### Command Line Scripts
+
+This theme provides command-line scripts for generating HTML and PDF versions of your resume:
+
+#### Generate HTML
+```bash
+# Using npm scripts with sample resume
+npm run render:sample
+
+# Or with custom input/output
+npm run render -- --input=path/to/your-resume.json --output=output.html
+```
+
+#### Generate PDF with Puppeteer
+```bash
+# Using npm scripts with sample resume
+npm run pdf:sample
+
+# Or with custom input/output
+npm run pdf -- --input=path/to/your-resume.json --output=output.pdf
+```
+
 ### Preview your resume
 
 To preview your resume locally:
@@ -82,7 +104,14 @@ This method provides the best single-page output optimized for this theme.
 resume export resume.pdf --theme . --resume your-resume.json
 ```
 
-Note: The CLI method may produce a two-page PDF. For optimal results, use the Safari print method above.
+**Using the included PDF script (with Puppeteer):**
+```bash
+npm run pdf:sample
+# or
+npm run pdf -- --input=path/to/your-resume.json --output=your-resume.pdf
+```
+
+Note: The CLI method may produce a two-page PDF. For optimal results, use the Safari print method above or the Puppeteer-based PDF script.
 
 ## Resume Schema
 
@@ -157,8 +186,10 @@ To test changes to the theme:
 
 - For best single-page results, **uncheck "Headers and Footers"** in Safari print dialog
 - The theme is optimized for A4 page size with 8mm margins
-- Font size is set to 9pt for print with 1.15 line height
+- Font size is set to 10pt for print with 1.2 line height
 - Page breaks are controlled to keep experience entries together
+- Print styles use `!important` declarations to ensure proper formatting when converting to PDF
+- Reduced spacing in print styles for more compact output that fits on one page
 
 ## License
 

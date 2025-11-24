@@ -1,10 +1,14 @@
 {
   "name": "jsonresume-theme-modern-plain",
-  "version": "1.1.3",
+  "version": "1.1.4",
   "description": "A clean, modern JSON Resume theme with a professional two-column layout, PT Sans typography, and optimized for single-page print output",
   "main": "index.js",
   "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1"
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "render": "node scripts/render.js",
+    "pdf": "node scripts/pdf.js",
+    "render:sample": "node scripts/render.js --input=resume.sample.json --output=sample.html",
+    "pdf:sample": "node scripts/pdf.js --input=resume.sample.json --output=sample.pdf"
   },
   "keywords": [
     "jsonresume",
@@ -29,5 +33,8 @@
   "homepage": "https://github.com/roman-pinchuk/jsonresume-theme-modern-plain#readme",
   "dependencies": {
     "handlebars": "^4.7.8"
+  },
+  "devDependencies": {
+    "puppeteer": "^24.31.0"
   }
 }

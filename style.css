@@ -504,26 +504,26 @@ strong.certification {
     }
     body {
         background-color: #fff !important;
-        padding: 5mm 0
+        padding: 5mm 0 !important
     }
     .resume-container {
-        width: 100%;
-        min-height: auto;
-        margin: 0;
-        padding: 8mm 10mm;
-        box-shadow: none;
-        border: none
+        width: 100% !important;
+        min-height: auto !important;
+        margin: 0 !important;
+        padding: 6mm 8mm !important;  /* Reduced from 15mm 10mm */
+        box-shadow: none !important;
+        border: none !important
     }
     .resume-header {
-        padding-bottom: .3rem;
-        margin-bottom: .4rem;
-        border-bottom: 1px solid #4a89dc
+        padding-bottom: .2rem !important;  /* Reduced */
+        margin-bottom: .3rem !important;   /* Reduced */
+        border-bottom: 1px solid #4a89dc !important
     }
     .summary {
-        margin-bottom: .5rem
+        margin-bottom: .4rem !important    /* Reduced */
     }
     .main-content {
-        gap: 6mm
+        gap: 3mm !important                 /* Reduced from 6mm */
     }
     h1,
     h2,
@@ -531,9 +531,9 @@ strong.certification {
     h4,
     h5,
     h6 {
-        margin-top: .3em;
-        margin-bottom: .1em;
-        letter-spacing: normal
+        margin-top: .2em !important;       /* Reduced */
+        margin-bottom: .05em !important;   /* Reduced */
+        letter-spacing: normal !important
     }
     h1 {
         font-size: 1.15rem;
@@ -580,16 +580,16 @@ strong.certification {
         background-color: transparent !important
     }
     .experience-entry {
-        margin-bottom: 0.2rem;
-        page-break-inside: avoid;
-        break-inside: avoid;
+        margin-bottom: 0.15rem !important;  /* Reduced from 0.2rem */
+        page-break-inside: avoid !important;
+        break-inside: avoid !important;
     }
     .experience-details ul {
         margin-bottom: 0.1rem;
     }
     .experience-details {
-        page-break-inside: avoid;
-        break-inside: avoid;
+        page-break-inside: avoid !important;
+        break-inside: avoid !important;
     }
     .right-column section {
         margin-bottom: 0.25rem;
