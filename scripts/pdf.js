@@ -38,20 +38,24 @@ if (!fs.existsSync(inputPath)) {
         const page = await browser.newPage();
         
         // Navigate to the temporary HTML file
-        await page.goto(`file://${tempHtmlPath}`, { 
-            waitUntil: 'networkidle2' 
+        await page.goto(`file://${tempHtmlPath}`, {
+            waitUntil: 'networkidle2'
         });
-        
-        // Generate PDF with A4 format
+
+        // Emulate media type as print to ensure print styles are applied
+        await page.emulateMediaType('print');
+
+        // Wait for the page to be fully loaded and ensure styles are applied
+        await page.waitForFunction(() => document.readyState === 'complete');
+
+        // Additional wait to ensure CSS is applied in print mode
+        await page.evaluate(() => new Promise(resolve => setTimeout(resolve, 200)));
+
         const pdf = await page.pdf({
             format: 'A4',
             printBackground: true,
-            margin: {
-                top: '8mm',
-                bottom: '8mm',
-                left: '8mm',
-                right: '8mm'
-            }
+            // Let the CSS @page rules in the HTML handle page formatting
+            preferCSSPageSize: true
         });
         
         // Save the PDF
