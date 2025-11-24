@@ -494,7 +494,7 @@ strong.certification {
 @media print {
     @page {
         size: A4;
-        margin: 8mm
+        margin: 2mm 1mm 1mm 1mm  /* Reduced from 8mm for better content area */
     }
     html {
         font-size: 10pt;
