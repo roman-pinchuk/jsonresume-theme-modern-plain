@@ -67,18 +67,30 @@
         </div>
     </header>
 
-    {{#if basics.summary}}
-    <section class="summary">
-        <h1>SUMMARY</h1>
-        <p>{{{basics.summary}}}</p>
-    </section>
-    {{/if}}
-
     <div class="main-content">
-        <section class="left-column">
-            {{#if work}}
+        {{#if basics.summary}}
+        <section class="summary">
+            <h1>SUMMARY</h1>
+            <p>{{{basics.summary}}}</p>
+        </section>
+        {{/if}}
+
+        {{#if skills}}
+        <section class="skills">
+            <h1>SKILLS</h1>
+            <div class="skills-entry">
+                {{#each skills}}
+                <p><strong>{{name}}</strong>
+                <span>{{join keywords ", "}}</span></p>
+                {{/each}}
+            </div>
+        </section>
+        {{/if}}
+
+        {{#if work}}
+        <section class="experience">
             <h1>EXPERIENCE</h1>
-            {{#each work}}
+            {{#each (limit work 4)}}
             <article class="experience-entry">
                 <div class="date-cell">
                     <span>{{formatDate endDate}}</span>
@@ -115,30 +127,30 @@
                 </div>
             </article>
             {{/each}}
-            {{/if}}
         </section>
+        {{/if}}
 
-        <aside class="right-column">
-            {{#if projects}}
-            <section class="projects">
-                <h1>SELECTED PROJECTS</h1>
-                <ul class="projects-list" style="list-style: disc; padding-left: 1.5em">
-                    {{#each projects}}
-                    <li>
-                        <b>
-                        {{#if url}}
-                        <a href="{{url}}" target="_blank" rel="noopener noreferrer nofollow">{{name}}</a>:
-                        {{else}}
-                        {{name}}:
-                        {{/if}}
-                        </b> {{description}}
-                    </li>
-                    {{/each}}
-                </ul>
-            </section>
-            {{/if}}
+        {{#if projects}}
+        <section class="projects">
+            <h1>SELECTED PROJECTS</h1>
+            <ul class="projects-list" style="list-style: disc; padding-left: 1.5em">
+                {{#each projects}}
+                <li>
+                    <b>
+                    {{#if url}}
+                    <a href="{{url}}" target="_blank" rel="noopener noreferrer nofollow">{{name}}</a>:
+                    {{else}}
+                    {{name}}:
+                    {{/if}}
+                    </b> {{description}}
+                </li>
+                {{/each}}
+            </ul>
+        </section>
+        {{/if}}
 
-            {{#if education}}
+        {{#if education}}
+        <div class="secondary-sections">
             <section class="education">
                 <h1>EDUCATION</h1>
                 {{#each education}}
@@ -170,19 +182,6 @@
                 {{/each}}
                 {{/if}}
             </section>
-            {{/if}}
-
-            {{#if skills}}
-            <section class="skills">
-                <h1>SKILLS</h1>
-                <div class="skills-entry">
-                    {{#each skills}}
-                    <p><strong>{{name}}</strong>
-                    <span>{{join keywords ", "}}</span></p>
-                    {{/each}}
-                </div>
-            </section>
-            {{/if}}
 
             {{#if languages}}
             <section class="languages">
@@ -197,7 +196,22 @@
                 </table>
             </section>
             {{/if}}
-        </aside>
+        </div>
+        {{else}}
+        {{#if languages}}
+        <section class="languages">
+            <h1>LANGUAGES</h1>
+            <table class="languages-table">
+                {{#each languages}}
+                <tr>
+                    <td>{{language}}</td>
+                    <td>{{fluency}}</td>
+                </tr>
+                {{/each}}
+            </table>
+        </section>
+        {{/if}}
+        {{/if}}
     </div>
 </div>
 </body>
