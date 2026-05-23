@@ -4,7 +4,7 @@
 [![npm downloads](https://img.shields.io/npm/dm/jsonresume-theme-modern-plain.svg)](https://www.npmjs.com/package/jsonresume-theme-modern-plain)
 [![license](https://img.shields.io/npm/l/jsonresume-theme-modern-plain.svg)](https://github.com/roman-pinchuk/jsonresume-theme-modern-plain/blob/main/LICENSE)
 
-A clean, modern JSON Resume theme with a professional two-column layout. Perfect for developers, engineers, and technical professionals.
+A clean, modern JSON Resume theme with a professional one-column layout. Perfect for developers, engineers, and technical professionals.
 <img width="1267" height="528" alt="image" src="https://github.com/user-attachments/assets/89a3107c-dfd6-4bb0-b523-70bf936cce06" />
 
 [![Live Demo](https://img.shields.io/badge/Live%20Demo-Modern%20Plain-blue?style=for-the-badge&logo=github&logoColor=white)](https://roman-pinchuk.github.io/jsonresume-theme-modern-plain)
@@ -12,7 +12,7 @@ A clean, modern JSON Resume theme with a professional two-column layout. Perfect
 ## Features
 
 - Clean, modern design with PT Sans typography
-- Two-column layout (Experience on left, Skills/Education on right)
+- One-column layout with skills directly after the summary
 - Print-optimized styles for single-page output
 - Company URLs with link icons displayed after company names
 - Social links with icons (Website, LinkedIn, GitHub) showing usernames
@@ -153,15 +153,13 @@ The theme uses **PT Sans** for all text, loaded from Google Fonts. To change fon
 
 ### Layout
 
-The layout uses a 3:2 ratio for the left and right columns. To adjust, modify the `flex` values in `style.css`:
+The layout uses a single-column flow. To adjust section spacing, modify the section margins in `style.css`:
 
 ```css
-.left-column {
-    flex: 3;  /* Adjust this */
-}
-
-.right-column {
-    flex: 2;  /* Adjust this */
+.summary,
+.skills,
+.main-content section {
+    margin-bottom: .8rem;
 }
 ```
 

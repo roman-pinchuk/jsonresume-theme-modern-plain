@@ -222,7 +222,7 @@ a:focus {
     line-height: 1;
 }
 
-.summary {
+.main-content section {
     margin-bottom: .8rem
 }
 
@@ -250,19 +250,8 @@ a:focus {
 }
 
 .main-content {
-    display: flex;
+    display: block;
     flex-grow: 1;
-    gap: 13mm;
-}
-
-.left-column {
-    flex: 3;
-    min-width: 0
-}
-
-.right-column {
-    flex: 2;
-    min-width: 0
 }
 
 .experience-entry {
@@ -297,7 +286,7 @@ a:focus {
     padding-left: 0.2em;
 }
 
-.right-column section {
+.main-content section {
     margin-bottom: 0.65rem;
 }
 
@@ -352,6 +341,12 @@ strong.certification {
     display: inline;
 }
 
+.skills-entry {
+    display: grid;
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+    column-gap: 2rem;
+}
+
 .skills-entry strong {
     display: block;
     color: var(--primary-color);
@@ -367,6 +362,12 @@ strong.certification {
     line-height: 1.35;
     display: block;
     margin-bottom: 0.4em;
+}
+
+.secondary-sections {
+    display: grid;
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+    column-gap: 2rem;
 }
 
 .languages-table {
@@ -422,7 +423,7 @@ strong.certification {
     margin-bottom: 0.1em;
 }
 
-.right-column h1 {
+.main-content h1 {
     margin-bottom: 0.2em;
     margin-top: 0.5em;
 }
@@ -494,7 +495,7 @@ strong.certification {
 @media print {
     @page {
         size: A4;
-        margin: 2mm 1mm 1mm 1mm  /* Reduced from 8mm for better content area */
+        margin: 1mm 1mm 0 1mm
     }
     html {
         font-size: 10pt;
@@ -510,20 +511,17 @@ strong.certification {
         width: 100% !important;
         min-height: auto !important;
         margin: 0 !important;
-        padding: 6mm 8mm !important;  /* Reduced from 15mm 10mm */
+        padding: 4mm 7mm !important;
         box-shadow: none !important;
         border: none !important
     }
     .resume-header {
-        padding-bottom: .2rem !important;  /* Reduced */
-        margin-bottom: .3rem !important;   /* Reduced */
+        padding-bottom: .2rem !important;
+        margin-bottom: .25rem !important;
         border-bottom: 1px solid #4a89dc !important
     }
-    .summary {
-        margin-bottom: .4rem !important    /* Reduced */
-    }
-    .main-content {
-        gap: 3mm !important                 /* Reduced from 6mm */
+    .main-content section {
+        margin-bottom: 0.3rem !important;
     }
     h1,
     h2,
@@ -531,17 +529,17 @@ strong.certification {
     h4,
     h5,
     h6 {
-        margin-top: .2em !important;       /* Reduced */
-        margin-bottom: .05em !important;   /* Reduced */
+        margin-top: .2em !important;
+        margin-bottom: .05em !important;
         letter-spacing: normal !important
     }
     h1 {
-        font-size: 1.15rem;
+        font-size: 1.1rem;
         border-bottom-color: var(--border-color);
         color: var(--primary-dark-color)
     }
     .header-left h1 {
-        font-size: 1.8rem;
+        font-size: 1.6rem;
         color: var(--primary-color)
     }
     h2 {
@@ -567,17 +565,13 @@ strong.certification {
     li,
     p,
     span {
-        line-height: 1.22;
-        margin-bottom: .14em;
+        line-height: 1.18;
+        margin-bottom: .1em;
         widows: 2;
         orphans: 2
     }
     .languages-table td:last-child {
         color: #333 !important
-    }
-    .left-column,
-    .right-column {
-        background-color: transparent !important
     }
     .experience-entry {
         margin-bottom: 0.15rem !important;  /* Reduced from 0.2rem */
@@ -591,7 +585,7 @@ strong.certification {
         page-break-inside: avoid !important;
         break-inside: avoid !important;
     }
-    .right-column section {
+    .main-content section {
         margin-bottom: 0.25rem;
     }
     .experience-details li {
@@ -620,6 +614,12 @@ strong.certification {
     }
     .social-links svg {
         fill: currentColor
+    }
+    .skills-entry {
+        column-gap: 1.5rem;
+    }
+    .secondary-sections {
+        column-gap: 1.5rem;
     }
     .education-entry p > span {
         font-weight: 300 !important;
@@ -661,14 +661,18 @@ strong.certification {
         font-size: 0.85rem;
     }
 
-    .main-content {
-        flex-direction: column;
-        gap: 1.5rem;
+    .main-content section {
+        margin-bottom: 1.5rem;
     }
 
-    .left-column,
-    .right-column {
-        width: 100%;
+    .skills-entry {
+        grid-template-columns: 1fr;
+        column-gap: 0;
+    }
+
+    .secondary-sections {
+        grid-template-columns: 1fr;
+        column-gap: 0;
     }
 
     .experience-entry {
