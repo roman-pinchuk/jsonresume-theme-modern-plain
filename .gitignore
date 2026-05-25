@@ -43,3 +43,6 @@ yarn-error.log*
 # Temporary files
 tmp/
 temp/
+
+# Antigravity CLI
+.antigravitycli/
