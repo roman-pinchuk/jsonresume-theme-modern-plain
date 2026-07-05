@@ -28,6 +28,19 @@ Handlebars.registerHelper('formatDate', function(date) {
     return d.getFullYear();
 });
 
+Handlebars.registerHelper('formatDateRange', function(startDate, endDate) {
+    const start = formatMonthYear(startDate);
+    const end = endDate ? formatMonthYear(endDate) : 'Present';
+    return start ? `${start} - ${end}` : end;
+});
+
+Handlebars.registerHelper('formatPhone', function(phone) {
+    if (!phone) return '';
+    const normalized = String(phone).replace(/\s+/g, '');
+    const match = normalized.match(/^(\+\d{3})(\d{2})(\d{3})(\d{4})$/);
+    return match ? `${match[1]} ${match[2]} ${match[3]} ${match[4]}` : phone;
+});
+
 Handlebars.registerHelper('formatYear', function(date) {
     if (!date) return '';
     const d = new Date(date);
@@ -48,6 +61,19 @@ Handlebars.registerHelper('limit', function(array, limit) {
     if (!array || !Array.isArray(array)) return [];
     return array.slice(0, limit);
 });
+
+function formatMonthYear(date) {
+    if (!date) return '';
+
+    const [year, month = '01'] = String(date).split('-');
+    const monthIndex = Number(month) - 1;
+    if (!year || Number.isNaN(monthIndex) || monthIndex < 0 || monthIndex > 11) {
+        return date;
+    }
+
+    const months = ['Jan', 'Feb', 'Mar', 'Apr', 'May', 'Jun', 'Jul', 'Aug', 'Sep', 'Oct', 'Nov', 'Dec'];
+    return `${months[monthIndex]} ${year}`;
+}
 
 function render(resume) {
     // Read the template and CSS

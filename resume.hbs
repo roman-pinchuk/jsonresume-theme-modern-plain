@@ -24,7 +24,7 @@
             <span>{{basics.location.city}}{{#if basics.location.countryCode}}, {{basics.location.countryCode}}{{/if}}</span><br>
             {{/if}}
             {{#if basics.phone}}
-            <strong><a href="tel:{{basics.phone}}" style="color: inherit; text-decoration: none;">{{basics.phone}}</a></strong>
+            <strong><a href="tel:{{basics.phone}}" style="color: inherit; text-decoration: none;">{{formatPhone basics.phone}}</a></strong>
             {{/if}}
             {{#if basics.email}}
             <br><strong><a href="mailto:{{basics.email}}" style="color: inherit; text-decoration: none;">{{basics.email}}</a></strong><br>
@@ -92,26 +92,33 @@
             <h1>EXPERIENCE</h1>
             {{#each (limit work 4)}}
             <article class="experience-entry">
-                <div class="date-cell">
-                    <span>{{formatDate endDate}}</span>
-                    <span class="arrow">↑</span>
-                    <span>{{formatDate startDate}}</span>
-                </div>
                 <div class="experience-details">
-                    <h2>{{position}}</h2>
+                    <div class="experience-heading">
+                        <h2>{{position}}</h2>
+                        <span class="date-range">{{formatDateRange startDate endDate}}</span>
+                    </div>
                     <h3>
                         {{name}}
                         {{#if url}}
-                        <a href="{{url}}" target="_blank" rel="noopener noreferrer nofollow" class="company-url">
-                            <svg fill="currentColor" height="0.85em" style="vertical-align: -.05em; margin-left: 0.3em; margin-right: 0.2em;" viewBox="0 0 24 24" width="0.85em">
-                                <path d="M3.9 12c0-1.71 1.39-3.1 3.1-3.1h4V7H7c-2.76 0-5 2.24-5 5s2.24 5 5 5h4v-1.9H7c-1.71 0-3.1-1.39-3.1-3.1zM8 13h8v-2H8v2zm9-6h-4v1.9h4c1.71 0 3.1 1.39 3.1 3.1s-1.39 3.1-3.1 3.1h-4V17h4c2.76 0 5-2.24 5-5s-2.24-5-5-5z"/>
-                            </svg>
-                            {{extractDomain url}}
-                        </a>
-                        {{/if}}
+                        <span class="company-meta">
+                            <a href="{{url}}" target="_blank" rel="noopener noreferrer nofollow" class="company-url">
+                                <svg fill="currentColor" height="0.85em" viewBox="0 0 24 24" width="0.85em">
+                                    <path d="M3.9 12c0-1.71 1.39-3.1 3.1-3.1h4V7H7c-2.76 0-5 2.24-5 5s2.24 5 5 5h4v-1.9H7c-1.71 0-3.1-1.39-3.1-3.1zM8 13h8v-2H8v2zm9-6h-4v1.9h4c1.71 0 3.1 1.39 3.1 3.1s-1.39 3.1-3.1 3.1h-4V17h4c2.76 0 5-2.24 5-5s-2.24-5-5-5z"/>
+                                </svg>
+                                {{extractDomain url}}
+                            </a>
+                            {{#if location}}
+                            <span class="separator">|</span>
+                            <span class="location-country">{{location}}</span>
+                            {{/if}}
+                        </span>
+                        {{else}}
                         {{#if location}}
-                        <span class="separator">|</span>
-                        <span class="location-country">{{location}}</span>
+                        <span class="company-meta">
+                            <span class="separator">|</span>
+                            <span class="location-country">{{location}}</span>
+                        </span>
+                        {{/if}}
                         {{/if}}
                     </h3>
                     {{#if summary}}

@@ -13,6 +13,7 @@ const outputArg = args.find(arg => arg.startsWith('--output='));
 // Extract file paths
 const inputPath = inputArg ? inputArg.split('=')[1] : './resume.sample.json';
 const outputPath = outputArg ? outputArg.split('=')[1] : './output.pdf';
+const chromePath = '/Applications/Google Chrome.app/Contents/MacOS/Google Chrome';
 
 // Check if input file exists
 if (!fs.existsSync(inputPath)) {
@@ -34,7 +35,12 @@ if (!fs.existsSync(inputPath)) {
         fs.writeFileSync(tempHtmlPath, html);
         
         // Launch Puppeteer browser
-        const browser = await puppeteer.launch();
+        const launchOptions = {};
+        if (!process.env.PUPPETEER_EXECUTABLE_PATH && fs.existsSync(chromePath)) {
+            launchOptions.executablePath = chromePath;
+        }
+
+        const browser = await puppeteer.launch(launchOptions);
         const page = await browser.newPage();
         
         // Navigate to the temporary HTML file

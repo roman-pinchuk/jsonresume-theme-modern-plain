@@ -189,6 +189,9 @@ a:focus {
 }
 
 .social-links {
+    align-items: center;
+    display: inline-flex;
+    gap: 0.75em;
     margin-top: .4em
 }
 
@@ -198,6 +201,7 @@ a:focus {
     text-decoration: none;
     color: #555 !important;
     font-size: 1rem;
+    gap: 0.3em;
     transition: color .2s ease
 }
 
@@ -209,16 +213,16 @@ a:focus {
 }
 
 .social-links svg {
-    margin-right: .3em;
+    display: block;
+    flex: 0 0 auto;
     fill: currentColor;
-    vertical-align: -.15em
 }
 
 .social-links .separator {
     color: #ccc;
-    margin: 0 .8em;
+    display: inline-flex;
+    align-items: center;
     font-size: 1rem;
-    vertical-align: middle;
     line-height: 1;
 }
 
@@ -255,35 +259,32 @@ a:focus {
 }
 
 .experience-entry {
-    display: flex;
+    display: block;
     margin-bottom: .8rem
 }
 
-.date-cell {
-    flex: 0 0 auto;
-    min-width: 30pt;
-    max-width: 80pt;
-    text-align: right;
-    padding-right: 0.4em;
-    font-size: 1rem;
-    font-weight: 700;
-    color: var(--text-secondary-color);
-    line-height: 1.1;
-    letter-spacing: normal
-}
-
-.date-cell span {
-    display: block
-}
-
-.date-cell .arrow {
-    color: var(--primary-color)
-}
-
 .experience-details {
-    flex-grow: 1;
     min-width: 0;
-    padding-left: 0.2em;
+}
+
+.experience-heading {
+    align-items: baseline;
+    display: flex;
+    gap: 0.75em;
+    justify-content: space-between;
+}
+
+.experience-heading h2 {
+    flex: 1 1 auto;
+}
+
+.date-range {
+    color: var(--text-secondary-color);
+    flex: 0 0 auto;
+    font-size: 0.92rem;
+    font-weight: 700;
+    letter-spacing: normal;
+    white-space: nowrap;
 }
 
 .main-content section {
@@ -450,13 +451,19 @@ strong.certification {
 }
 
 .company-url {
+    align-items: center;
     color: #888;
+    display: inline-flex;
+    gap: 0.2em;
     text-decoration: none;
     font-weight: 400;
     font-size: 0.95em;
     transition: color 0.2s ease;
-    display: inline-flex;
-    align-items: center;
+}
+
+.company-url svg {
+    display: block;
+    flex: 0 0 auto;
 }
 
 .company-url:hover,
@@ -480,44 +487,49 @@ strong.certification {
     font-size: 0.9em;
     color: #888;
     letter-spacing: normal;
+}
+
+.company-meta {
+    align-items: center;
+    display: inline-flex;
+    gap: 0.45em;
     margin-left: 0.3em;
     vertical-align: baseline;
 }
 
-.experience-details h3 .separator {
+.company-meta .separator {
     color: #bbb;
-    margin: 0 0.4em;
     font-weight: 300;
     font-size: 0.95em;
-    vertical-align: baseline;
+    line-height: 1;
 }
 
 @media print {
     @page {
         size: A4;
-        margin: 1mm 1mm 0 1mm
+        margin: 0
     }
     html {
-        font-size: 10pt;
-        line-height: 1.2;
+        font-size: 9.9pt;
+        line-height: 1.15;
         -webkit-print-color-adjust: exact;
         print-color-adjust: exact
     }
     body {
         background-color: #fff !important;
-        padding: 5mm 0 !important
+        padding: 0 !important
     }
     .resume-container {
         width: 100% !important;
         min-height: auto !important;
         margin: 0 !important;
-        padding: 4mm 7mm !important;
+        padding: 5mm 7mm 3mm !important;
         box-shadow: none !important;
         border: none !important
     }
     .resume-header {
         padding-bottom: .2rem !important;
-        margin-bottom: .25rem !important;
+        margin-bottom: .18rem !important;
         border-bottom: 1px solid #4a89dc !important
     }
     .main-content section {
@@ -565,8 +577,8 @@ strong.certification {
     li,
     p,
     span {
-        line-height: 1.18;
-        margin-bottom: .1em;
+        line-height: 1.14;
+        margin-bottom: .05em;
         widows: 2;
         orphans: 2
     }
@@ -574,28 +586,22 @@ strong.certification {
         color: #333 !important
     }
     .experience-entry {
-        margin-bottom: 0.15rem !important;  /* Reduced from 0.2rem */
-        page-break-inside: avoid !important;
-        break-inside: avoid !important;
+        margin-bottom: 0.1rem !important;
     }
     .experience-details ul {
-        margin-bottom: 0.1rem;
-    }
-    .experience-details {
-        page-break-inside: avoid !important;
-        break-inside: avoid !important;
+        margin-bottom: 0.05rem;
     }
     .main-content section {
-        margin-bottom: 0.25rem;
+        margin-bottom: 0.18rem;
     }
     .experience-details li {
-        font-size: .85rem;
-        margin-bottom: 0.1em;
-        line-height: 1.15;
+        font-size: .89rem;
+        margin-bottom: 0.05em;
+        line-height: 1.14;
     }
     .experience-details h2,
     .experience-details h3 {
-        margin-bottom: 0.2em;
+        margin-bottom: 0.1em;
     }
     .education-entry strong,
     strong.certification {
@@ -615,16 +621,30 @@ strong.certification {
     .social-links svg {
         fill: currentColor
     }
+    .secondary-sections,
     .skills-entry {
         column-gap: 1.5rem;
     }
-    .secondary-sections {
-        column-gap: 1.5rem;
+    .skills-entry strong {
+        font-size: .88rem;
+        margin-bottom: 0.05em;
+    }
+    .skills-entry span {
+        font-size: .82rem;
+        line-height: 1.1;
+        margin-bottom: 0.18em;
+    }
+    .languages-table td {
+        font-size: .86rem;
+        padding: 0.02em 0;
+    }
+    .languages-table td:first-child {
+        font-size: .95rem;
     }
     .education-entry p > span {
         font-weight: 300 !important;
         color: #555 !important;
-        font-size: .85rem !important;
+        font-size: .82rem !important;
     }
     .notes { page-break-before: avoid; }
 }
@@ -676,33 +696,16 @@ strong.certification {
     }
 
     .experience-entry {
-        flex-direction: column;
         margin-bottom: 1.2rem;
     }
 
-    .date-cell {
-        flex: none;
-        text-align: left;
-        padding-right: 0;
-        margin-bottom: 0.3em;
-        font-size: 0.9rem;
-        display: flex;
-        flex-direction: row-reverse;
-        justify-content: flex-end;
+    .experience-heading {
+        display: block;
     }
 
-    .date-cell span {
-        display: inline;
-    }
-
-    .date-cell .arrow {
-        margin: 0 0.4em;
-        font-size: 0;
-    }
-
-    .date-cell .arrow::after {
-        content: "→";
-        font-size: 0.9rem;
+    .date-range {
+        display: block;
+        margin-bottom: 0.2em;
     }
 
     .header-left h1 {
