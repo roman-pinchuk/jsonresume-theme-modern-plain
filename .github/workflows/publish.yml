@@ -29,5 +29,15 @@ jobs:
       - name: Install dependencies
         run: npm ci
 
+      - name: Prevent publishing older version as latest
+        run: |
+          PACKAGE_NAME=$(node -p "require('./package.json').name")
+          PACKAGE_VERSION=$(node -p "require('./package.json').version")
+          LATEST_VERSION=$(npm view "$PACKAGE_NAME" dist-tags.latest || true)
+
+          if [ -n "$LATEST_VERSION" ] && [ "$LATEST_VERSION" != "null" ]; then
+            node -e "const parse = (v) => v.split('.').map(Number); const [current, latest] = process.argv.slice(1).map(parse); for (let i = 0; i < 3; i++) { if (current[i] > latest[i]) process.exit(0); if (current[i] < latest[i]) { console.error(process.argv[1] + ' is older than npm latest ' + process.argv[2] + '; refusing to publish.'); process.exit(1); } }" "$PACKAGE_VERSION" "$LATEST_VERSION"
+          fi
+
       - name: Publish to npm
         run: npm publish
