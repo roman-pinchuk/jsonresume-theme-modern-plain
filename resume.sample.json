@@ -28,46 +28,67 @@
   "work": [
     {
       "name": "TechCorp Inc.",
+      "location": "San Francisco, US",
       "position": "Senior Software Engineer",
       "url": "https://techcorp.example.com",
       "startDate": "2021-03",
       "endDate": "",
-      "summary": "Leading development of microservices architecture and mentoring a team of 5 engineers.",
+      "summary": "Leading development of microservices architecture and mentoring a team of 5 engineers for a B2B SaaS platform used by Fortune 500 companies.",
       "highlights": [
-        "Architected and implemented a microservices platform serving 10M+ users, reducing response time by 40%",
-        "Led migration from monolithic architecture to microservices, improving deployment frequency by 300%",
-        "Mentored 5 junior engineers, resulting in 2 promotions within the team",
-        "Implemented CI/CD pipelines reducing deployment time from 2 hours to 15 minutes",
-        "Reduced infrastructure costs by 30% through optimization and cloud resource management"
+        "Architected and implemented a microservices platform serving 10M+ users, reducing response time by 40% and improving uptime to 99.9%",
+        "Led migration from monolith to event-driven microservices using Node.js and Kafka, improving deployment frequency by 300%",
+        "Mentored 5 junior engineers through code reviews and pair programming, resulting in 2 promotions within 12 months",
+        "Implemented CI/CD pipelines with GitHub Actions, Docker, and Kubernetes, reducing deployment time from 2 hours to 15 minutes",
+        "Reduced infrastructure costs by 30% through AWS resource right-sizing, spot instance adoption, and caching layer optimization",
+        "Introduced structured incident management process with post-mortems, reducing mean time to resolution by 45%"
       ]
     },
     {
       "name": "StartupXYZ",
+      "location": "New York, US",
       "position": "Full Stack Developer",
       "url": "https://startupxyz.example.com",
       "startDate": "2018-06",
       "endDate": "2021-02",
-      "summary": "Built core features for a SaaS platform from ground up, scaling from 0 to 100K users.",
+      "summary": "Built core features for a B2B SaaS platform from ground up, scaling from 0 to 100K users in a fast-paced startup environment.",
       "highlights": [
-        "Developed full-stack features using React, Node.js, and PostgreSQL for early-stage SaaS product",
-        "Implemented real-time collaboration features using WebSockets, supporting 5K concurrent users",
-        "Reduced API response time by 60% through database query optimization and caching strategies",
-        "Built automated testing suite achieving 85% code coverage, reducing production bugs by 50%",
-        "Collaborated with product team to define technical requirements and roadmap"
+        "Developed full-stack features using React, TypeScript, Node.js, and PostgreSQL, delivering 20+ major feature releases",
+        "Designed real-time collaboration features using WebSockets, supporting 5K concurrent users with sub-100ms latency",
+        "Reduced API response times by 60% through database query optimization, Redis caching layer, and connection pooling",
+        "Built automated testing suite with Jest and Cypress achieving 85% code coverage, reducing production bugs by 50%",
+        "Established coding standards and review practices adopted across the 12-person engineering organization",
+        "Led technical discovery for 3 major product initiatives, scoping architecture and estimating effort for cross-functional teams"
       ]
     },
     {
       "name": "Digital Agency Co.",
+      "location": "Austin, US",
       "position": "Junior Web Developer",
       "url": "https://digitalagency.example.com",
       "startDate": "2016-01",
       "endDate": "2018-05",
-      "summary": "Developed responsive websites and web applications for various clients.",
+      "summary": "Developed responsive websites and web applications for 20+ clients across e-commerce, healthcare, and education sectors.",
       "highlights": [
-        "Built 15+ responsive websites using HTML, CSS, JavaScript, and WordPress",
-        "Improved website performance scores by 40% through optimization techniques",
-        "Collaborated with designers to implement pixel-perfect UI components",
-        "Maintained and updated existing client websites, ensuring compatibility across browsers"
+        "Built 15+ responsive, accessible websites using HTML, CSS, JavaScript, and WordPress, meeting WCAG 2.1 AA accessibility standards",
+        "Improved website performance scores by 40% through image optimization, lazy loading, and critical CSS inlining",
+        "Collaborated with UX designers to implement pixel-perfect UI components using reusable component libraries",
+        "Maintained and updated 30+ client websites, ensuring cross-browser compatibility across Chrome, Firefox, Safari, and mobile browsers",
+        "Onboarded and mentored 2 intern developers, introducing structured code review process to the team"
+      ]
+    },
+    {
+      "name": "Web Studio Labs",
+      "location": "Los Angeles, US",
+      "position": "Intern Web Developer",
+      "url": "https://webstudiolabs.example.com",
+      "startDate": "2015-06",
+      "endDate": "2015-12",
+      "summary": "Completed 6-month internship focused on front-end development and agency workflow.",
+      "highlights": [
+        "Built 5+ responsive client landing pages from design mockups using HTML, CSS, and JavaScript",
+        "Assisted senior developers with WordPress theme customizations and plugin integrations",
+        "Learned version control with Git, participated in code reviews, and adopted team coding standards",
+        "Completed internal training program covering responsive design, accessibility, and cross-browser testing"
       ]
     }
   ],
@@ -80,6 +101,15 @@
       "startDate": "2012-09",
       "endDate": "2016-05",
       "gpa": "3.8/5.0"
+    },
+    {
+      "institution": "Stanford University",
+      "url": "https://www.stanford.edu",
+      "area": "Software Engineering",
+      "studyType": "Master of Science",
+      "startDate": "2016-09",
+      "endDate": "2018-05",
+      "gpa": "3.9/5.0"
     }
   ],
   "certificates": [
@@ -94,6 +124,12 @@
       "date": "2021-11",
       "issuer": "Google Cloud",
       "url": "https://cloud.google.com/certification"
+    },
+    {
+      "name": "Kubernetes Application Developer (CKAD)",
+      "date": "2023-01",
+      "issuer": "The Linux Foundation",
+      "url": "https://training.linuxfoundation.org/certification/certified-kubernetes-application-developer-ckad/"
     }
   ],
   "skills": [
@@ -163,16 +199,16 @@
     {
       "name": "OpenSource Toolkit",
       "url": "https://github.com/janedoe/opensource-toolkit",
-      "description": "Popular open-source library with 5K+ GitHub stars"
+      "description": "Popular open-source JavaScript library for state management in React applications with 5K+ GitHub stars"
     },
     {
       "name": "DevBlog",
       "url": "https://janedoe.dev/blog",
-      "description": "Technical blog with 50K+ monthly readers"
+      "description": "Technical blog covering full-stack development, cloud architecture, and career growth with 50K+ monthly readers"
     },
     {
       "name": "MobileApp",
-      "description": "React Native app for local community events"
+      "description": "React Native cross-platform mobile app connecting volunteers with local community service events"
     }
   ]
 }
