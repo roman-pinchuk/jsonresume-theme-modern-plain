@@ -18,7 +18,8 @@
     "modern",
     "plain",
     "professional",
-    "print-optimized"
+    "print-optimized",
+    "one-pager"
   ],
   "author": "Roman Pinchuk",
   "license": "MIT",
