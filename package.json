@@ -1,6 +1,6 @@
 {
   "name": "jsonresume-theme-modern-plain",
-  "version": "1.4.2",
+  "version": "1.4.3",
   "description": "A clean, modern JSON Resume theme with a professional one-column layout, PT Sans typography, and optimized for single-page print output",
   "main": "index.js",
   "scripts": {
@@ -25,7 +25,7 @@
   "license": "MIT",
   "repository": {
     "type": "git",
-    "url": "https://github.com/roman-pinchuk/jsonresume-theme-modern-plain.git"
+    "url": "git+https://github.com/roman-pinchuk/jsonresume-theme-modern-plain.git"
   },
   "bugs": {
     "url": "https://github.com/roman-pinchuk/jsonresume-theme-modern-plain/issues"
