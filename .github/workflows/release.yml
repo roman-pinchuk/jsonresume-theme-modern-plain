@@ -20,6 +20,16 @@ jobs:
         with:
           fetch-depth: 0
 
+      - name: Verify tag matches package version
+        run: |
+          TAG_VERSION="${GITHUB_REF_NAME#v}"
+          PACKAGE_VERSION=$(node -p "require('./package.json').version")
+
+          if [ "$TAG_VERSION" != "$PACKAGE_VERSION" ]; then
+            echo "Release tag $GITHUB_REF_NAME does not match package.json version $PACKAGE_VERSION."
+            exit 1
+          fi
+
       - name: Generate changelog
         id: changelog
         run: |
