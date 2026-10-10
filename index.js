@@ -54,6 +54,21 @@ Handlebars.registerHelper('extractDomain', function(url) {
     }
 });
 
+Handlebars.registerHelper('urlLabel', function(url, fallback) {
+    if (!url) return fallback || '';
+    try {
+        const urlObj = new URL(url);
+        return `${urlObj.hostname.replace('www.', '')}${urlObj.pathname.replace(/\/$/, '')}`;
+    } catch (e) {
+        return fallback || url;
+    }
+});
+
+Handlebars.registerHelper('countryName', function(countryCode) {
+    const countries = { IL: 'Israel' };
+    return countries[countryCode] || countryCode || '';
+});
+
 Handlebars.registerHelper('limit', function(array, limit) {
     if (!array || !Array.isArray(array)) return [];
     return array.slice(0, limit);
