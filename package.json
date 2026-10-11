@@ -32,9 +32,9 @@
   },
   "homepage": "https://github.com/roman-pinchuk/jsonresume-theme-modern-plain#readme",
   "dependencies": {
-    "handlebars": "^4.7.9"
+    "handlebars": "^4.7.10"
   },
   "devDependencies": {
-    "puppeteer": "^25.0.4"
+    "puppeteer": "^25.13.0"
   }
 }

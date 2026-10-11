@@ -170,7 +170,7 @@
                         {{studyType}}{{#if area}} {{area}}{{/if}}
                         {{/if}}
                         </strong>
-                        <span>- {{institution}}{{#if endDate}} ({{formatYear endDate}}){{/if}}{{#if gpa}}; GPA: {{gpa}}{{/if}}</span>
+                        <span>- {{institution}}{{#if startDate}} ({{formatYear startDate}} - {{#if endDate}}{{formatYear endDate}}{{else}}Present{{/if}}){{else}}{{#if endDate}} ({{formatYear endDate}}){{/if}}{{/if}}{{#if gpa}}; GPA: {{gpa}}{{/if}}</span>
                     </p>
                 </div>
                 {{/each}}
